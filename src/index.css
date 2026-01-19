@@ -1,0 +1,199 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    /* EcoTote Brand Colors - Earthy Forest Theme */
+    --background: 60 30% 98%;
+    --foreground: 150 30% 15%;
+
+    --card: 60 25% 97%;
+    --card-foreground: 150 30% 15%;
+
+    --popover: 60 25% 97%;
+    --popover-foreground: 150 30% 15%;
+
+    /* Primary: Forest Green */
+    --primary: 115 37% 25%;
+    --primary-foreground: 60 30% 98%;
+
+    /* Secondary: Soft Leaf Green */
+    --secondary: 120 25% 65%;
+    --secondary-foreground: 150 30% 15%;
+
+    /* Muted: Sage tones */
+    --muted: 100 15% 92%;
+    --muted-foreground: 150 15% 45%;
+
+    /* Accent: Warm leaf */
+    --accent: 85 35% 75%;
+    --accent-foreground: 150 30% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 60 30% 98%;
+
+    --border: 100 20% 88%;
+    --input: 100 20% 88%;
+    --ring: 115 37% 25%;
+
+    --radius: 0.75rem;
+
+    /* Custom EcoTote tokens */
+    --cream: 45 40% 96%;
+    --forest: 115 37% 25%;
+    --forest-light: 115 30% 35%;
+    --leaf: 120 25% 65%;
+    --leaf-light: 120 20% 85%;
+    --earth: 30 25% 35%;
+    --bark: 25 30% 25%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(115 37% 25%) 0%, hsl(120 25% 35%) 100%);
+    --gradient-soft: linear-gradient(180deg, hsl(60 30% 98%) 0%, hsl(100 15% 95%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(60 25% 97%) 0%, hsl(100 20% 95%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px hsl(115 37% 25% / 0.06);
+    --shadow-md: 0 4px 16px hsl(115 37% 25% / 0.08);
+    --shadow-lg: 0 8px 32px hsl(115 37% 25% / 0.12);
+    --shadow-glow: 0 0 40px hsl(120 25% 65% / 0.25);
+
+    --sidebar-background: 60 25% 97%;
+    --sidebar-foreground: 150 30% 15%;
+    --sidebar-primary: 115 37% 25%;
+    --sidebar-primary-foreground: 60 30% 98%;
+    --sidebar-accent: 100 15% 92%;
+    --sidebar-accent-foreground: 150 30% 15%;
+    --sidebar-border: 100 20% 88%;
+    --sidebar-ring: 115 37% 25%;
+  }
+
+  .dark {
+    --background: 150 30% 8%;
+    --foreground: 60 30% 95%;
+
+    --card: 150 25% 12%;
+    --card-foreground: 60 30% 95%;
+
+    --popover: 150 25% 12%;
+    --popover-foreground: 60 30% 95%;
+
+    --primary: 120 25% 65%;
+    --primary-foreground: 150 30% 10%;
+
+    --secondary: 115 30% 25%;
+    --secondary-foreground: 60 30% 95%;
+
+    --muted: 150 20% 18%;
+    --muted-foreground: 100 15% 65%;
+
+    --accent: 115 25% 22%;
+    --accent-foreground: 60 30% 95%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 60 30% 95%;
+
+    --border: 150 20% 20%;
+    --input: 150 20% 20%;
+    --ring: 120 25% 65%;
+
+    --sidebar-background: 150 25% 10%;
+    --sidebar-foreground: 60 30% 95%;
+    --sidebar-primary: 120 25% 65%;
+    --sidebar-primary-foreground: 150 30% 10%;
+    --sidebar-accent: 150 20% 18%;
+    --sidebar-accent-foreground: 60 30% 95%;
+    --sidebar-border: 150 20% 20%;
+    --sidebar-ring: 120 25% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .eco-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .eco-section {
+    @apply py-16 md:py-24;
+  }
+
+  .eco-card {
+    @apply bg-card rounded-2xl p-6 shadow-sm border border-border/50 transition-all duration-300 hover:shadow-md;
+  }
+
+  .eco-badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-leaf/20 text-primary;
+  }
+
+  .eco-gradient-text {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { 
+      opacity: 0; 
+      transform: translateY(20px); 
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+  }
+
+  @keyframes scaleIn {
+    from { 
+      opacity: 0; 
+      transform: scale(0.95); 
+    }
+    to { 
+      opacity: 1; 
+      transform: scale(1); 
+    }
+  }
+}
