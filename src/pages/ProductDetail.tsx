@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { useToast } from "@/hooks/use-toast";
 import { getProductById, getRelatedProducts, Product } from "../data/products";
-import { sendWhatsAppOrder } from "../utils/Whatsapp";
+import {sendWhatsAppOrder} from '@/utils/whatsapp'
 
 
 const ProductDetail = ({ Product }) => {
@@ -18,6 +18,7 @@ const ProductDetail = ({ Product }) => {
 
     const product = getProductById(Number(id));
     const relatedProducts = product ? getRelatedProducts(product.id, product.category) : [];
+    console.log(relatedProducts)
 
     const [selectedSize, setSelectedSize] = useState(product?.sizes[0] || "");
     const [quantity, setQuantity] = useState(1);
