@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { useToast } from "@/hooks/use-toast";
 import { getProductById, getRelatedProducts, Product } from "../data/products";
-import { sendWhatsAppOrder } from "../utils/Whatsapp.js";
+import { sendWhatsAppOrder } from "../utils/Whatsapp";
 
 
 const ProductDetail = ({ Product }) => {
