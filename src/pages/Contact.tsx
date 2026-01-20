@@ -53,7 +53,7 @@ const Contact = () => {
 
     setIsSubmitting(true);
 
-    const phoneNumber = "918113063359"; // no +
+    const phoneNumber = "919446883146"; // no +
 
     const message = `
 Hello EcoTote 👋
