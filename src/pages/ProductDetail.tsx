@@ -53,7 +53,7 @@ Please let me know the next steps.
 
     const handleOrder = () => {
         sendWhatsAppOrder({
-            phoneNumber: "918113063359",
+            phoneNumber: "919446883146",
             productName: product.name,
             price: totalPrice,
             size: selectedSize,
