@@ -26,9 +26,9 @@ export function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-primary-foreground/10">
+              {/* <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-primary-foreground/10">
                 <Leaf className="w-5 h-5 text-leaf" />
-              </div>
+              </div> */}
               <span className="text-xl font-bold tracking-tight">
                 ECO<span className="text-leaf">TOTE</span>
               </span>
