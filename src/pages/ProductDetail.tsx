@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { ArrowLeft, Minus, Plus, ShoppingCart, Truck, Shield, QrCode, Leaf, Check, Star } from "lucide-react";
 import { Header } from "@/components/layout/Header";
@@ -15,6 +15,12 @@ const ProductDetail = ({ Product }) => {
     const { id } = useParams<{ id: string }>();
     const navigate = useNavigate();
     const { toast } = useToast();
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    }, [id]);
 
     const product = getProductById(Number(id));
     const relatedProducts = product ? getRelatedProducts(product.id, product.category) : [];
@@ -23,15 +29,15 @@ const ProductDetail = ({ Product }) => {
     const [selectedSize, setSelectedSize] = useState(product?.sizes[0] || "");
     const [quantity, setQuantity] = useState(1);
     const [selectedImage, setSelectedImage] = useState(0);
-    
-const sendWhatsAppOrder = ({
-  phoneNumber,
-  productName,
-  price,
-  size,
-  quantity
-}) => {
-  const message = `
+
+    const sendWhatsAppOrder = ({
+        phoneNumber,
+        productName,
+        price,
+        size,
+        quantity
+    }) => {
+        const message = `
 Hello EcoTote 👋
 
 I would like to place an order.
@@ -44,11 +50,11 @@ I would like to place an order.
 Please let me know the next steps.
 `;
 
-  const encodedMessage = encodeURIComponent(message.trim());
-  const url = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+        const encodedMessage = encodeURIComponent(message.trim());
+        const url = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
-  window.open(url, "_blank");
-};
+        window.open(url, "_blank");
+    };
 
 
     const handleOrder = () => {
